@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{11E4C96E-43E2-458C-95C5-F817E470229A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>RealTimeSyncReborn</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="RagePluginHookSDK">
+      <HintPath>S:\Grand Theft Auto\GTA V Mods\RAGE Plugin Hook\SDK\RagePluginHookSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealTimeSyncReborn.functions\General.cs" />
+    <Compile Include="RealTimeSyncReborn.json\weather.cs" />
+    <Compile Include="RealTimeSyncReborn.json\weatherClouds.cs" />
+    <Compile Include="RealTimeSyncReborn.json\weatherCoord.cs" />
+    <Compile Include="RealTimeSyncReborn.json\weatherMain.cs" />
+    <Compile Include="RealTimeSyncReborn.json\weatherSys.cs" />
+    <Compile Include="RealTimeSyncReborn.json\weatherWeather.cs" />
+    <Compile Include="RealTimeSyncReborn.json\weatherWind.cs" />
+    <Compile Include="RealTimeSyncReborn.My.Resources\Resources.cs" />
+    <Compile Include="RealTimeSyncReborn.My\MyApplication.cs" />
+    <Compile Include="RealTimeSyncReborn.My\MyComputer.cs" />
+    <Compile Include="RealTimeSyncReborn.My\MyProject.cs" />
+    <Compile Include="RealTimeSyncReborn.My\MySettings.cs" />
+    <Compile Include="RealTimeSyncReborn.My\MySettingsProperty.cs" />
+    <Compile Include="RealTimeSyncReborn.Plugin\Main.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
