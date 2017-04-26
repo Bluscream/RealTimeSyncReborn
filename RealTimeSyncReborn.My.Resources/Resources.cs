@@ -22,7 +22,7 @@ namespace RealTimeSyncReborn.My.Resources
 		{
 			get
 			{
-				if (Resources.resourceMan == null)
+				if (object.ReferenceEquals(Resources.resourceMan, null))
 				{
 					Resources.resourceMan = new ResourceManager("RealTimeSyncReborn.Resources", typeof(Resources).Assembly);
 				}

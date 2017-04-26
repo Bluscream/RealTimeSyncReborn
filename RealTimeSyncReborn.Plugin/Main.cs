@@ -37,7 +37,7 @@ namespace RealTimeSyncReborn.Plugin
 
 		private static int menuID;
 
-		public static bool[] weatherStates = new bool[14];
+        public static bool[] weatherStates = new bool[14];
 
 		private static bool[] menuStates = new bool[4];
 
@@ -95,26 +95,26 @@ namespace RealTimeSyncReborn.Plugin
 
 		private static Texture[] selectedTextures = new Texture[]
 		{
-			Main.TimeSyncSelected,
-			Main.WeatherSyncSelected,
-			Main.NotificationsDisplaySelected,
-			Main.UpdateCheckingSelected,
-			Main.ApplySelected,
-			Main.ExitSelected,
-			Main.CheckSelected,
-			Main.CrossSelected
+			RealTimeSyncReborn.Plugin.Main.TimeSyncSelected,
+			RealTimeSyncReborn.Plugin.Main.WeatherSyncSelected,
+			RealTimeSyncReborn.Plugin.Main.NotificationsDisplaySelected,
+			RealTimeSyncReborn.Plugin.Main.UpdateCheckingSelected,
+			RealTimeSyncReborn.Plugin.Main.ApplySelected,
+			RealTimeSyncReborn.Plugin.Main.ExitSelected,
+			RealTimeSyncReborn.Plugin.Main.CheckSelected,
+			RealTimeSyncReborn.Plugin.Main.CrossSelected
 		};
 
 		private static Texture[] UnselectedTextures = new Texture[]
 		{
-			Main.TimeSyncUnselected,
-			Main.WeatherSyncUnselected,
-			Main.NotificationsDisplayUnselected,
-			Main.UpdateCheckingUnselected,
-			Main.ApplyUnselected,
-			Main.ExitUnselected,
-			Main.CheckUnselected,
-			Main.CrossUnselected
+			RealTimeSyncReborn.Plugin.Main.TimeSyncUnselected,
+			RealTimeSyncReborn.Plugin.Main.WeatherSyncUnselected,
+			RealTimeSyncReborn.Plugin.Main.NotificationsDisplayUnselected,
+			RealTimeSyncReborn.Plugin.Main.UpdateCheckingUnselected,
+			RealTimeSyncReborn.Plugin.Main.ApplyUnselected,
+			RealTimeSyncReborn.Plugin.Main.ExitUnselected,
+			RealTimeSyncReborn.Plugin.Main.CheckUnselected,
+			RealTimeSyncReborn.Plugin.Main.CrossUnselected
 		};
 
 		private static void main()
@@ -122,50 +122,50 @@ namespace RealTimeSyncReborn.Plugin
 			try
 			{
 				General.ShowLogStart();
-				if (Main.settings.Exists())
+				if (RealTimeSyncReborn.Plugin.Main.settings.Exists())
 				{
-					Main.apiUrl = Main.settings.ReadString("WEATHER SETTINGS", "APIURL", "http://api.openweathermap.org/data/2.5/weather?q={CITY}&units={Metric/Imperial}&APPID={OpenWeatherMap AppID}");
-					Main.WeatherFreq = Conversions.ToString(Main.settings.ReadInt32("WEATHER SETTINGS", "NOTIFICATIONS_FREQ", 10));
-					Main.weatherStates[0] = Main.settings.ReadBoolean("WEATHER TYPES", "ExtraSunny", true);
-					Main.weatherStates[1] = Main.settings.ReadBoolean("WEATHER TYPES", "Clear", true);
-					Main.weatherStates[2] = Main.settings.ReadBoolean("WEATHER TYPES", "Clouds", true);
-					Main.weatherStates[3] = Main.settings.ReadBoolean("WEATHER TYPES", "Smog", true);
-					Main.weatherStates[4] = Main.settings.ReadBoolean("WEATHER TYPES", "Foggy", true);
-					Main.weatherStates[5] = Main.settings.ReadBoolean("WEATHER TYPES", "Overcast", true);
-					Main.weatherStates[6] = Main.settings.ReadBoolean("WEATHER TYPES", "Rain", true);
-					Main.weatherStates[7] = Main.settings.ReadBoolean("WEATHER TYPES", "Thunder", true);
-					Main.weatherStates[8] = Main.settings.ReadBoolean("WEATHER TYPES", "Clearing", true);
-					Main.weatherStates[9] = Main.settings.ReadBoolean("WEATHER TYPES", "Neutral", true);
-					Main.weatherStates[10] = Main.settings.ReadBoolean("WEATHER TYPES", "Snow", true);
-					Main.weatherStates[11] = Main.settings.ReadBoolean("WEATHER TYPES", "Blizzard", true);
-					Main.weatherStates[12] = Main.settings.ReadBoolean("WEATHER TYPES", "Snowlight", true);
-					Main.weatherStates[13] = Main.settings.ReadBoolean("WEATHER TYPES", "Xmas", true);
-					Main.menuStates[1] = Main.settings.ReadBoolean("GENERAL SETTINGS", "WeatherSync", true);
-					Main.menuStates[0] = Main.settings.ReadBoolean("GENERAL SETTINGS", "TimeSync", true);
-					Main.menuStates[2] = Main.settings.ReadBoolean("GENERAL SETTINGS", "ShowNotifications", true);
-					Main.menuStates[3] = Main.settings.ReadBoolean("GENERAL SETTINGS", "CheckForUpdates", true);
+                    RealTimeSyncReborn.Plugin.Main.apiUrl = RealTimeSyncReborn.Plugin.Main.settings.ReadString("WEATHER SETTINGS", "APIURL", "http://api.openweathermap.org/data/2.5/weather?q={CITY}&units={Metric/Imperial}&APPID={OpenWeatherMap AppID}");
+					RealTimeSyncReborn.Plugin.Main.WeatherFreq = Conversions.ToString(RealTimeSyncReborn.Plugin.Main.settings.ReadInt32("WEATHER SETTINGS", "NOTIFICATIONS_FREQ", 10));
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[0] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "ExtraSunny", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[1] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Clear", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[2] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Clouds", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[3] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Smog", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[4] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Foggy", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[5] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Overcast", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[6] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Rain", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[7] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Thunder", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[8] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Clearing", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[9] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Neutral", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[10] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Snow", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[11] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Blizzard", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[12] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Snowlight", true);
+                    RealTimeSyncReborn.Plugin.Main.weatherStates[13] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("WEATHER TYPES", "Xmas", true);
+                    RealTimeSyncReborn.Plugin.Main.menuStates[1] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("GENERAL SETTINGS", "WeatherSync", true);
+					RealTimeSyncReborn.Plugin.Main.menuStates[0] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("GENERAL SETTINGS", "TimeSync", true);
+					RealTimeSyncReborn.Plugin.Main.menuStates[2] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("GENERAL SETTINGS", "ShowNotifications", true);
+					RealTimeSyncReborn.Plugin.Main.menuStates[3] = RealTimeSyncReborn.Plugin.Main.settings.ReadBoolean("GENERAL SETTINGS", "CheckForUpdates", true);
 					try
 					{
-						Main.menuKey = (Keys)Conversions.ToInteger(new KeysConverter().ConvertFromInvariantString(Main.settings.ReadString("KEYS SETTINGS", "OpenMenu", "NumPad5")));
+						RealTimeSyncReborn.Plugin.Main.menuKey = (Keys)Conversions.ToInteger(new KeysConverter().ConvertFromInvariantString(RealTimeSyncReborn.Plugin.Main.settings.ReadString("KEYS SETTINGS", "OpenMenu", "NumPad5")));
 					}
-					catch (Exception arg_27E_0)
+					catch (Exception expr_12D)
 					{
-						ProjectData.SetProjectError(arg_27E_0);
-						Game.DisplayNotification("char_bugstars", "char_bugstars", "~r~~h~Real Time Sync Reborn", "~r~~h~ERROR", Main.settings.ReadString("KEYS SETTINGS", "OpenMenu", "NumPad5") + " is not recognized as key! ~n~Menu key set to NumPad5 by default");
-						Game.LogVerbose("ERROR : " + Main.settings.ReadString("KEYS SETTINGS", "OpenMenu", "NumPad5") + " is not recognized as key! ~n~Menu key set to NumPad5 by default");
-						Main.menuKey = Keys.NumPad5;
+						ProjectData.SetProjectError(expr_12D);
+						Game.DisplayNotification("char_bugstars", "char_bugstars", "~r~~h~Real Time Sync Reborn", "~r~~h~ERROR", RealTimeSyncReborn.Plugin.Main.settings.ReadString("KEYS SETTINGS", "OpenMenu", "NumPad5") + " is not recognized as key! ~n~Menu key set to NumPad5 by default");
+						Game.LogVerbose("ERROR : " + RealTimeSyncReborn.Plugin.Main.settings.ReadString("KEYS SETTINGS", "OpenMenu", "NumPad5") + " is not recognized as key! ~n~Menu key set to NumPad5 by default");
+						RealTimeSyncReborn.Plugin.Main.menuKey = Keys.NumPad5;
 						ProjectData.ClearProjectError();
 					}
-					Game.Console.Print("Current version : " + Main.PluginVersion);
-					Game.Console.Print("Up to date version : " + General.openURI(Main.updateUrl, ref Main.internetDownloadsError));
-					Game.Console.Print("FREQ : " + Main.WeatherFreq);
-					Game.Console.Print("WeatherSync : " + Main.menuStates[1].ToString());
-					Game.Console.Print("TimeSync : " + Main.menuStates[0].ToString());
-					Game.Console.Print("ShowNotifications : " + Main.menuStates[2].ToString());
-					Game.Console.Print("CheckForUpdates : " + Main.menuStates[3].ToString());
-					Game.Console.Print("OpenMenu key : " + Main.menuKey.ToString());
-					Game.Console.Print(string.Format("API URL: {0}", Main.apiUrl));
-					Game.Console.Print("-----------------------------------------------------------");
+					Game.Console.Print("Current version : " + RealTimeSyncReborn.Plugin.Main.PluginVersion);
+					Game.Console.Print("Up to date version : " + General.openURI(RealTimeSyncReborn.Plugin.Main.updateUrl, ref RealTimeSyncReborn.Plugin.Main.internetDownloadsError));
+					Game.Console.Print("FREQ : " + RealTimeSyncReborn.Plugin.Main.WeatherFreq);
+					Game.Console.Print("WeatherSync : " + RealTimeSyncReborn.Plugin.Main.menuStates[1].ToString());
+					Game.Console.Print("TimeSync : " + RealTimeSyncReborn.Plugin.Main.menuStates[0].ToString());
+					Game.Console.Print("ShowNotifications : " + RealTimeSyncReborn.Plugin.Main.menuStates[2].ToString());
+					Game.Console.Print("CheckForUpdates : " + RealTimeSyncReborn.Plugin.Main.menuStates[3].ToString());
+					Game.Console.Print("OpenMenu key : " + RealTimeSyncReborn.Plugin.Main.menuKey.ToString());
+                    Game.Console.Print($"API URL: {RealTimeSyncReborn.Plugin.Main.apiUrl}");
+                    Game.Console.Print("-----------------------------------------------------------");
 				}
 				else
 				{
@@ -173,42 +173,42 @@ namespace RealTimeSyncReborn.Plugin
 				}
 				try
 				{
-					Main.WeatherFreq = Conversions.ToString(checked(Conversions.ToInteger(Main.WeatherFreq) * 60000));
-					if (Conversions.ToDouble(Main.WeatherFreq) < 10.0)
+					RealTimeSyncReborn.Plugin.Main.WeatherFreq = Conversions.ToString(checked(Conversions.ToInteger(RealTimeSyncReborn.Plugin.Main.WeatherFreq) * 60000));
+					if (Conversions.ToDouble(RealTimeSyncReborn.Plugin.Main.WeatherFreq) < 10.0)
 					{
-						Main.WeatherFreq = Conversions.ToString(10);
+						RealTimeSyncReborn.Plugin.Main.WeatherFreq = Conversions.ToString(10);
 					}
 				}
-				catch (Exception expr_48B)
+				catch (Exception expr_36E)
 				{
-					ProjectData.SetProjectError(expr_48B);
-					Exception ex = expr_48B;
-					Main.WeatherFreq = "600000";
+					ProjectData.SetProjectError(expr_36E);
+					Exception ex = expr_36E;
+					RealTimeSyncReborn.Plugin.Main.WeatherFreq = "600000";
 					Game.DisplayNotification("char_bugstars", "char_bugstars", "~r~~h~Real Time Sync Reborn", "~r~~h~ERROR", "Oh no! Something went wrong with your config file!");
 					Game.LogVerbose("ERROR : WeatherFreq is NaN, " + ex.Message);
 					ProjectData.ClearProjectError();
 				}
-				Game.FrameRender += new EventHandler<GraphicsEventArgs>(Main.GameFrameRender);
-				Main.showMenu = false;
-				Main.menuID = 0;
-				GameFiber.StartNew(new ThreadStart(Main.voidLoop), "VoidLoop");
-				if (Main.menuStates[3])
+				Game.FrameRender += new EventHandler<GraphicsEventArgs>(RealTimeSyncReborn.Plugin.Main.GameFrameRender);
+				RealTimeSyncReborn.Plugin.Main.showMenu = false;
+				RealTimeSyncReborn.Plugin.Main.menuID = 0;
+				GameFiber.StartNew(new ThreadStart(RealTimeSyncReborn.Plugin.Main.voidLoop), "VoidLoop");
+				if (RealTimeSyncReborn.Plugin.Main.menuStates[3])
 				{
-					Main.updateGamefiber = GameFiber.StartNew(new ThreadStart(Main.CheckUpdate), "CheckUpdate");
+					RealTimeSyncReborn.Plugin.Main.updateGamefiber = GameFiber.StartNew(new ThreadStart(RealTimeSyncReborn.Plugin.Main.CheckUpdate), "CheckUpdate");
 				}
-				if (Main.menuStates[1])
+				if (RealTimeSyncReborn.Plugin.Main.menuStates[1])
 				{
-					Main.weatherGamefiber = GameFiber.StartNew(new ThreadStart(Main.WeatherLoop), "WeatherLoop");
+					RealTimeSyncReborn.Plugin.Main.weatherGamefiber = GameFiber.StartNew(new ThreadStart(RealTimeSyncReborn.Plugin.Main.WeatherLoop), "WeatherLoop");
 				}
-				if (Main.menuStates[0])
+				if (RealTimeSyncReborn.Plugin.Main.menuStates[0])
 				{
-					Main.timeGamefiber = GameFiber.StartNew(new ThreadStart(Main.TimeLoop), "TimeLoop");
+					RealTimeSyncReborn.Plugin.Main.timeGamefiber = GameFiber.StartNew(new ThreadStart(RealTimeSyncReborn.Plugin.Main.TimeLoop), "TimeLoop");
 				}
 			}
-			catch (Exception expr_579)
+			catch (Exception expr_49C)
 			{
-				ProjectData.SetProjectError(expr_579);
-				Exception ex2 = expr_579;
+				ProjectData.SetProjectError(expr_49C);
+				Exception ex2 = expr_49C;
 				Game.LogVerbose("ERROR : " + ex2.Message);
 				ProjectData.ClearProjectError();
 			}
@@ -231,14 +231,14 @@ namespace RealTimeSyncReborn.Plugin
 
 		private static void updateGather()
 		{
-			Main.updateWebResult = General.openURI(Main.updateUrl, ref Main.internetDownloadsError);
+			RealTimeSyncReborn.Plugin.Main.updateWebResult = General.openURI(RealTimeSyncReborn.Plugin.Main.updateUrl, ref RealTimeSyncReborn.Plugin.Main.internetDownloadsError);
 		}
 
 		private static void weatherGather()
 		{
-			WebClient expr_05 = new WebClient();
-			Main.weatherWebResult = expr_05.DownloadString(Main.apiUrl);
-			expr_05.Dispose();
+			WebClient expr_17 = new WebClient();
+			RealTimeSyncReborn.Plugin.Main.weatherWebResult = expr_17.DownloadString(RealTimeSyncReborn.Plugin.Main.apiUrl);
+			expr_17.Dispose();
 		}
 
 		private static void CheckUpdate()
@@ -247,46 +247,46 @@ namespace RealTimeSyncReborn.Plugin
 			{
 				while (true)
 				{
-					Main.UpdatesCheckingStatus = true;
-					if (!Main.menuStates[3])
+					RealTimeSyncReborn.Plugin.Main.UpdatesCheckingStatus = true;
+					if (!RealTimeSyncReborn.Plugin.Main.menuStates[3])
 					{
 						break;
 					}
-					Main.updateThread = new Thread(new ThreadStart(Main.updateGather));
-					Main.updateThread.IsBackground = true;
+					RealTimeSyncReborn.Plugin.Main.updateThread = new Thread(new ThreadStart(RealTimeSyncReborn.Plugin.Main.updateGather));
+					RealTimeSyncReborn.Plugin.Main.updateThread.IsBackground = true;
 					if (General.netIsOk("www.google.com"))
 					{
-						Main.updateThread.Start();
-						while (Main.updateThread.IsAlive)
+						RealTimeSyncReborn.Plugin.Main.updateThread.Start();
+						while (RealTimeSyncReborn.Plugin.Main.updateThread.IsAlive)
 						{
 							GameFiber.Sleep(1);
 						}
-						if (Main.internetDownloadsError)
+						if (RealTimeSyncReborn.Plugin.Main.internetDownloadsError)
 						{
 							Game.DisplayNotification("char_bugstars", "char_bugstars", "~r~~h~Real Time Sync Reborn", "~r~~h~ERROR", "Oh no! Update version info can't be downloaded! (more info in console log)");
-							Game.LogVerbose("ERROR : " + Main.updateWebResult);
+							Game.LogVerbose("ERROR : " + RealTimeSyncReborn.Plugin.Main.updateWebResult);
 						}
-						else if (Operators.CompareString(Main.updateWebResult, Main.PluginVersion, false) != 0)
+						else if (Operators.CompareString(RealTimeSyncReborn.Plugin.Main.updateWebResult, RealTimeSyncReborn.Plugin.Main.PluginVersion, false) != 0)
 						{
 							Game.DisplayNotification("char_bugstars", "char_bugstars", "~g~~h~Real Time Sync Reborn", "~g~~h~INFO", string.Concat(new string[]
 							{
 								"New version (~g~",
-								Main.updateWebResult,
+								RealTimeSyncReborn.Plugin.Main.updateWebResult,
 								"~s~) available!~n~Installed version : ~r~",
-								Main.PluginVersion,
+								RealTimeSyncReborn.Plugin.Main.PluginVersion,
 								"~n~~s~Download it on www.lcpdfr.com!"
 							}));
 							Game.LogVerbose(string.Concat(new string[]
 							{
 								"New version (",
-								Main.updateWebResult,
+								RealTimeSyncReborn.Plugin.Main.updateWebResult,
 								") is available! Installed version : ",
-								Main.PluginVersion,
+								RealTimeSyncReborn.Plugin.Main.PluginVersion,
 								". Download the new version on www.lcpdfr.com!"
 							}));
 						}
-						Main.internetDownloadsError = false;
-						GameFiber.Sleep(Main.CheckUpdatesFreq);
+						RealTimeSyncReborn.Plugin.Main.internetDownloadsError = false;
+						GameFiber.Sleep(RealTimeSyncReborn.Plugin.Main.CheckUpdatesFreq);
 					}
 					else
 					{
@@ -298,7 +298,7 @@ namespace RealTimeSyncReborn.Plugin
 			{
 				ProjectData.SetProjectError(expr_174);
 				Exception ex = expr_174;
-				Main.UpdatesCheckingStatus = false;
+				RealTimeSyncReborn.Plugin.Main.UpdatesCheckingStatus = false;
 				Game.LogVerbose("CheckUpdate : " + ex.Message);
 				ProjectData.ClearProjectError();
 			}
@@ -312,8 +312,8 @@ namespace RealTimeSyncReborn.Plugin
 				{
 					while (true)
 					{
-						Main.weatherSyncStatus = true;
-						if (!Main.menuStates[1])
+						RealTimeSyncReborn.Plugin.Main.weatherSyncStatus = true;
+						if (!RealTimeSyncReborn.Plugin.Main.menuStates[1])
 						{
 							break;
 						}
@@ -321,7 +321,7 @@ namespace RealTimeSyncReborn.Plugin
 						{
 							int num = (int)NativeFunction.CallByName<uint>("GET_CLOCK_HOURS", new NativeArgument[0]);
 							int num2 = (int)NativeFunction.CallByName<uint>("GET_CLOCK_MINUTES", new NativeArgument[0]);
-							string text = "Â°";
+							string text = "°";
 							string text2;
 							if (num < 10)
 							{
@@ -341,17 +341,17 @@ namespace RealTimeSyncReborn.Plugin
 								text3 = num2.ToString();
 							}
 							JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
-							Main.weatherThread = new Thread(new ThreadStart(Main.weatherGather));
-							Main.weatherThread.IsBackground = true;
-							Main.weatherThread.Start();
-							while (Main.weatherThread.IsAlive)
+							RealTimeSyncReborn.Plugin.Main.weatherThread = new Thread(new ThreadStart(RealTimeSyncReborn.Plugin.Main.weatherGather));
+							RealTimeSyncReborn.Plugin.Main.weatherThread.IsBackground = true;
+							RealTimeSyncReborn.Plugin.Main.weatherThread.Start();
+							while (RealTimeSyncReborn.Plugin.Main.weatherThread.IsAlive)
 							{
 								GameFiber.Sleep(1);
 							}
-							if (!Main.weatherWebResult.Contains("Error"))
+							if (!RealTimeSyncReborn.Plugin.Main.weatherWebResult.Contains("Error"))
 							{
-								weather weather = javaScriptSerializer.Deserialize<weather>(Main.weatherWebResult);
-								if (Main.menuStates[2])
+								weather weather = javaScriptSerializer.Deserialize<weather>(RealTimeSyncReborn.Plugin.Main.weatherWebResult);
+								if (RealTimeSyncReborn.Plugin.Main.menuStates[2])
 								{
 									Game.DisplayNotification("web_fruit", "web_fruit", "~y~~h~WEATHER CHANNEL", "~y~~h~FORECAST", string.Concat(new string[]
 									{
@@ -396,14 +396,14 @@ namespace RealTimeSyncReborn.Plugin
 								Game.DisplayNotification("char_bugstars", "char_bugstars", "~r~~h~Real Time Sync Reborn", "~r~~h~ERROR", "Oh no! Location can't be found!");
 							}
 						}
-						GameFiber.Sleep(Conversions.ToInteger(Main.WeatherFreq));
+						GameFiber.Sleep(Conversions.ToInteger(RealTimeSyncReborn.Plugin.Main.WeatherFreq));
 					}
 				}
-				catch (Exception expr_2C6)
+				catch (Exception expr_2FB)
 				{
-					ProjectData.SetProjectError(expr_2C6);
-					Exception ex = expr_2C6;
-					Main.weatherSyncStatus = false;
+					ProjectData.SetProjectError(expr_2FB);
+					Exception ex = expr_2FB;
+					RealTimeSyncReborn.Plugin.Main.weatherSyncStatus = false;
 					Game.LogVerbose("WeatherLoop : " + ex.Message);
 					if (ex.HResult == -2146233079)
 					{
@@ -420,8 +420,8 @@ namespace RealTimeSyncReborn.Plugin
 			{
 				while (true)
 				{
-					Main.timeSyncStatus = true;
-					if (!Main.menuStates[0])
+					RealTimeSyncReborn.Plugin.Main.timeSyncStatus = true;
+					if (!RealTimeSyncReborn.Plugin.Main.menuStates[0])
 					{
 						break;
 					}
@@ -438,7 +438,7 @@ namespace RealTimeSyncReborn.Plugin
 			{
 				ProjectData.SetProjectError(expr_6A);
 				Exception ex = expr_6A;
-				Main.timeSyncStatus = false;
+				RealTimeSyncReborn.Plugin.Main.timeSyncStatus = false;
 				Game.LogVerbose("TimeLoop : " + ex.Message);
 				ProjectData.ClearProjectError();
 			}
@@ -450,114 +450,114 @@ namespace RealTimeSyncReborn.Plugin
 			{
 				try
 				{
-					if (Game.IsKeyDown(Main.menuKey))
+					if (Game.IsKeyDown(RealTimeSyncReborn.Plugin.Main.menuKey))
 					{
-						if (!Main.showMenu)
+						if (!RealTimeSyncReborn.Plugin.Main.showMenu)
 						{
-							Main.showMenu = true;
+							RealTimeSyncReborn.Plugin.Main.showMenu = true;
 						}
 						else
 						{
-							Main.showMenu = false;
+							RealTimeSyncReborn.Plugin.Main.showMenu = false;
 						}
 					}
-					if (Main.showMenu)
+					if (RealTimeSyncReborn.Plugin.Main.showMenu)
 					{
 						Game.DisableControlAction(1, GameControl.Phone, true);
 						if (Game.IsKeyDown(Keys.Down))
 						{
-							General.menuDown(ref Main.menuID);
+							General.menuDown(ref RealTimeSyncReborn.Plugin.Main.menuID);
 						}
 						if (Game.IsKeyDown(Keys.Up))
 						{
-							General.menuUp(ref Main.menuID);
+							General.menuUp(ref RealTimeSyncReborn.Plugin.Main.menuID);
 						}
 						if (Game.IsKeyDown(Keys.Left) | Game.IsKeyDown(Keys.Right))
 						{
-							General.selectSyncStates(Main.menuID, ref Main.menuStates);
+							General.selectSyncStates(RealTimeSyncReborn.Plugin.Main.menuID, ref RealTimeSyncReborn.Plugin.Main.menuStates);
 						}
-						General.menuSelectionBot(e, Main.menuID, Main.menuStates, Main.header, Main.selectedTextures, Main.UnselectedTextures);
+						General.menuSelectionBot(e, RealTimeSyncReborn.Plugin.Main.menuID, RealTimeSyncReborn.Plugin.Main.menuStates, RealTimeSyncReborn.Plugin.Main.header, RealTimeSyncReborn.Plugin.Main.selectedTextures, RealTimeSyncReborn.Plugin.Main.UnselectedTextures);
 						if (Game.IsKeyDown(Keys.Return))
 						{
-							int num = Main.menuID;
+							int num = RealTimeSyncReborn.Plugin.Main.menuID;
 							if (num != 4)
 							{
 								if (num == 5)
 								{
-									Main.showMenu = false;
+									RealTimeSyncReborn.Plugin.Main.showMenu = false;
 								}
 							}
 							else
 							{
-								Main.settings.Write("GENERAL SETTINGS", "TimeSync", Main.menuStates[0]);
-								Main.settings.Write("GENERAL SETTINGS", "WeatherSync", Main.menuStates[1]);
-								Main.settings.Write("GENERAL SETTINGS", "ShowNotifications", Main.menuStates[2]);
-								Main.settings.Write("GENERAL SETTINGS", "CheckForUpdates", Main.menuStates[3]);
+								RealTimeSyncReborn.Plugin.Main.settings.Write("GENERAL SETTINGS", "TimeSync", RealTimeSyncReborn.Plugin.Main.menuStates[0]);
+								RealTimeSyncReborn.Plugin.Main.settings.Write("GENERAL SETTINGS", "WeatherSync", RealTimeSyncReborn.Plugin.Main.menuStates[1]);
+								RealTimeSyncReborn.Plugin.Main.settings.Write("GENERAL SETTINGS", "ShowNotifications", RealTimeSyncReborn.Plugin.Main.menuStates[2]);
+								RealTimeSyncReborn.Plugin.Main.settings.Write("GENERAL SETTINGS", "CheckForUpdates", RealTimeSyncReborn.Plugin.Main.menuStates[3]);
 								try
 								{
-									if (Main.menuStates[0])
+									if (RealTimeSyncReborn.Plugin.Main.menuStates[0])
 									{
-										if (!Main.timeSyncStatus)
+										if (!RealTimeSyncReborn.Plugin.Main.timeSyncStatus)
 										{
-											Main.timeGamefiber = GameFiber.StartNew(new ThreadStart(Main.TimeLoop), "TimeLoop");
+											RealTimeSyncReborn.Plugin.Main.timeGamefiber = GameFiber.StartNew(new ThreadStart(RealTimeSyncReborn.Plugin.Main.TimeLoop), "TimeLoop");
 										}
 									}
 									else
 									{
-										Main.timeGamefiber.Abort();
+										RealTimeSyncReborn.Plugin.Main.timeGamefiber.Abort();
 									}
 								}
-								catch (Exception arg_166_0)
+								catch (Exception expr_160)
 								{
-									ProjectData.SetProjectError(arg_166_0);
+									ProjectData.SetProjectError(expr_160);
 									ProjectData.ClearProjectError();
 								}
 								try
 								{
-									if (Main.menuStates[1])
+									if (RealTimeSyncReborn.Plugin.Main.menuStates[1])
 									{
-										if (!Main.weatherSyncStatus)
+										if (!RealTimeSyncReborn.Plugin.Main.weatherSyncStatus)
 										{
-											Main.weatherGamefiber = GameFiber.StartNew(new ThreadStart(Main.WeatherLoop), "WeatherLoop");
+											RealTimeSyncReborn.Plugin.Main.weatherGamefiber = GameFiber.StartNew(new ThreadStart(RealTimeSyncReborn.Plugin.Main.WeatherLoop), "WeatherLoop");
 										}
 									}
 									else
 									{
-										Main.weatherGamefiber.Abort();
+										RealTimeSyncReborn.Plugin.Main.weatherGamefiber.Abort();
 									}
 								}
-								catch (Exception arg_1AC_0)
+								catch (Exception expr_1A8)
 								{
-									ProjectData.SetProjectError(arg_1AC_0);
+									ProjectData.SetProjectError(expr_1A8);
 									ProjectData.ClearProjectError();
 								}
 								try
 								{
-									if (Main.menuStates[3])
+									if (RealTimeSyncReborn.Plugin.Main.menuStates[3])
 									{
-										if (!Main.UpdatesCheckingStatus)
+										if (!RealTimeSyncReborn.Plugin.Main.UpdatesCheckingStatus)
 										{
-											Main.updateGamefiber = GameFiber.StartNew(new ThreadStart(Main.CheckUpdate), "CheckUpdate");
+											RealTimeSyncReborn.Plugin.Main.updateGamefiber = GameFiber.StartNew(new ThreadStart(RealTimeSyncReborn.Plugin.Main.CheckUpdate), "CheckUpdate");
 										}
 									}
 									else
 									{
-										Main.updateGamefiber.Abort();
+										RealTimeSyncReborn.Plugin.Main.updateGamefiber.Abort();
 									}
 								}
-								catch (Exception arg_1F2_0)
+								catch (Exception expr_1F0)
 								{
-									ProjectData.SetProjectError(arg_1F2_0);
+									ProjectData.SetProjectError(expr_1F0);
 									ProjectData.ClearProjectError();
 								}
 								string text = "";
-								int num2 = Main.menuStates.Count<bool>() - 1;
+								int num2 = RealTimeSyncReborn.Plugin.Main.menuStates.Count<bool>() - 1;
 								for (int i = 0; i <= num2; i++)
 								{
 									switch (i)
 									{
 									case 0:
-										if (Main.menuStates[i])
+										if (RealTimeSyncReborn.Plugin.Main.menuStates[i])
 										{
 											text += "Time : ~g~True~n~";
 										}
@@ -567,7 +567,7 @@ namespace RealTimeSyncReborn.Plugin
 										}
 										break;
 									case 1:
-										if (Main.menuStates[i])
+										if (RealTimeSyncReborn.Plugin.Main.menuStates[i])
 										{
 											text += "~s~Weather : ~g~True~n~";
 										}
@@ -577,7 +577,7 @@ namespace RealTimeSyncReborn.Plugin
 										}
 										break;
 									case 2:
-										if (Main.menuStates[i])
+										if (RealTimeSyncReborn.Plugin.Main.menuStates[i])
 										{
 											text += "~s~Notifications : ~g~True~n~";
 										}
@@ -587,7 +587,7 @@ namespace RealTimeSyncReborn.Plugin
 										}
 										break;
 									case 3:
-										if (Main.menuStates[i])
+										if (RealTimeSyncReborn.Plugin.Main.menuStates[i])
 										{
 											text += "~s~Updates : ~g~True";
 										}
@@ -607,10 +607,10 @@ namespace RealTimeSyncReborn.Plugin
 						General.enableGameControls();
 					}
 				}
-				catch (Exception expr_2F4)
+				catch (Exception expr_308)
 				{
-					ProjectData.SetProjectError(expr_2F4);
-					Exception ex = expr_2F4;
+					ProjectData.SetProjectError(expr_308);
+					Exception ex = expr_308;
 					Game.LogVerbose("ERROR : " + ex.Message);
 					Game.DisplayNotification("char_bugstars", "char_bugstars", "~r~~h~Real Time Sync Reborn", "~r~~h~ERROR", "Oh no! Something went wrong!");
 					ProjectData.ClearProjectError();
